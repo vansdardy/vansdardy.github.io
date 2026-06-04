@@ -103,6 +103,19 @@ assets/img/            favicon
 .github/workflows/     the build-and-deploy pipeline
 ```
 
+### Pinning `Gemfile.lock` (one-time, optional)
+
+The build is already reproducible via the version constraints in `Gemfile` plus
+the Actions bundler cache. To additionally freeze the exact transitive
+dependency versions, grab the lockfile CI resolved and commit it:
+
+1. Actions tab → the latest successful run → **Artifacts → `gemfile-lock`** → download.
+2. Unzip; place `Gemfile.lock` in the repo root; commit + push.
+
+(It wasn't hand-written here on purpose: an inaccurate lockfile fails the build.)
+After committing it, you can delete the "Upload resolved Gemfile.lock" step in
+`.github/workflows/deploy.yml` if you like.
+
 ### Adding a "Writing / Essays" section later (no rebuild needed)
 
 The Projects section is a Jekyll *collection*. To add essays, mirror it:
