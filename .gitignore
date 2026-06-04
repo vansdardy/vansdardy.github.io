@@ -8,6 +8,9 @@ _site/
 vendor/
 .bundle/
 
+# Local-only agent guidance — not for the public repo
+CLAUDE.md
+
 # OS / editor cruft
 .DS_Store
 Thumbs.db
