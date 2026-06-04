@@ -1,0 +1,54 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Site settings  —  edit these once; they flow into <title>, SEO, and footers.
+# ─────────────────────────────────────────────────────────────────────────────
+title: "Wenyou (Tobias) Tian"
+tagline: "CS + Economics"               # short phrase shown under your name
+description: >-                          # used for SEO + link previews (~1-2 sentences)
+  CS + Economics student. I build things at the intersection of software and
+  markets. Résumé, projects, and ways to reach me.
+author: "Wenyou (Tobias) Tian"
+
+# This is a GitHub *user* page (vansdardy.github.io) → served at the domain root.
+# baseurl MUST stay empty; url is the full canonical origin (used by SEO/sitemap).
+url: "https://vansdardy.github.io"
+baseurl: ""
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Build configuration  —  you rarely touch anything below here.
+# ─────────────────────────────────────────────────────────────────────────────
+plugins:
+  - jekyll-seo-tag      # <meta> + Open Graph/Twitter cards so shared links look good
+  - jekyll-sitemap      # generates /sitemap.xml for search engines
+
+# "Projects" is a content collection: one Markdown file per project in _projects/.
+# Same pattern can add a future "essays/writing" section without any rebuild —
+# just create _essays/ with an analogous block here.
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# Default layout for project files so each _projects/*.md stays clean.
+# (Other pages set their own `layout:` in front matter. We deliberately do NOT
+# add a catch-all default here — that would wrap assets/css/main.scss in the
+# HTML layout and break the stylesheet.)
+defaults:
+  - scope: { path: "", type: "projects" }
+    values: { layout: "project" }
+
+# Markdown / engine
+markdown: kramdown
+kramdown:
+  input: GFM                 # GitHub-Flavored Markdown (fenced code, tables, etc.)
+  syntax_highlighter: rouge
+
+sass:
+  style: compressed
+
+# Don't copy these into the built site.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .github

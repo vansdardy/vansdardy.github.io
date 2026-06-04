@@ -1,0 +1,28 @@
+---
+layout: default
+title: Projects
+description: "Things I've built — software, research, and side projects."
+permalink: /projects/
+---
+<section class="container section">
+  <header class="page-head">
+    <h1>Projects</h1>
+    <p class="page-head__subtitle">Things I’ve built — click any card for the full write-up.</p>
+  </header>
+
+  {%- assign projects = site.projects | sort: "year" | reverse -%}
+  <div class="cards">
+    {% for project in projects %}
+      <a class="card" href="{{ project.url | relative_url }}">
+        <div class="card__top">
+          <h2 class="card__title">{{ project.title }}</h2>
+          {% if project.year %}<span class="card__year">{{ project.year }}</span>{% endif %}
+        </div>
+        <p class="card__summary">{{ project.summary }}</p>
+        <div class="card__tags">
+          {% for t in project.tech limit: 5 %}<span class="tag">{{ t }}</span>{% endfor %}
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>

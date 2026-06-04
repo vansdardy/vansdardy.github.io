@@ -1,0 +1,54 @@
+---
+layout: default
+---
+{%- comment -%}
+  Landing page = your "About + contact" section. The hero copy (the lede) comes
+  from the Markdown body of index.md, so you edit it as plain Markdown. Featured
+  cards pull from any _projects/ file with `featured: true`.
+{%- endcomment -%}
+{%- assign r = site.data.resume -%}
+
+<section class="hero container">
+  <p class="hero__eyebrow">{{ site.tagline }}</p>
+  <h1 class="hero__title">
+    Hi, I’m <span class="hero__name">{{ r.basics.name | default: site.author }}</span>.
+  </h1>
+
+  <div class="hero__lede prose">
+    {{ content }}
+  </div>
+
+  <div class="hero__actions">
+    <a class="btn" href="{{ '/resume/' | relative_url }}">Read my résumé</a>
+    <a class="btn btn--ghost" href="{{ '/projects/' | relative_url }}">See projects</a>
+  </div>
+
+  <div class="hero__social">
+    {% include social.html %}
+  </div>
+</section>
+
+{%- assign featured = site.projects | where: "featured", true | sort: "year" | reverse -%}
+{%- if featured.size > 0 -%}
+<section class="container section">
+  <div class="section__head">
+    <h2 class="section__title">Featured projects</h2>
+    <a class="section__more" href="{{ '/projects/' | relative_url }}">All projects →</a>
+  </div>
+
+  <div class="cards">
+    {% for project in featured limit: 3 %}
+      <a class="card" href="{{ project.url | relative_url }}">
+        <div class="card__top">
+          <h3 class="card__title">{{ project.title }}</h3>
+          {% if project.year %}<span class="card__year">{{ project.year }}</span>{% endif %}
+        </div>
+        <p class="card__summary">{{ project.summary }}</p>
+        <div class="card__tags">
+          {% for t in project.tech limit: 4 %}<span class="tag">{{ t }}</span>{% endfor %}
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+{%- endif -%}

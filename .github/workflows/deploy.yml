@@ -1,0 +1,75 @@
+# Build the Jekyll site and publish it to GitHub Pages.
+#
+# Structural shape:
+#   push to main ──▶ [build job] bundle install + jekyll build ──▶ artifact
+#                                                                     │
+#                                              [deploy job] deploy-pages ──▶ live at /
+#
+# This runs entirely on GitHub's runners. The site goes live only when the repo's
+# Settings ▸ Pages ▸ Source is set to "GitHub Actions" (not "Deploy from a branch").
+name: Deploy site to Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:        # lets you re-run manually from the Actions tab
+
+# Permissions the deploy step needs to publish to Pages via OIDC.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never run two deploys at once; let an in-progress production deploy finish.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true        # runs `bundle install` and caches gems between runs
+
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true   # auto-enables Pages with the "GitHub Actions" source
+
+      - name: Build with Jekyll
+        # baseurl comes from _config.yml (empty, for a user page); JEKYLL_ENV=production
+        # turns on production-only behavior (e.g. SEO tags emit absolute URLs).
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3   # uploads ./_site by default
+
+      # Surfaces the resolved Gemfile.lock so it can be committed once and then
+      # pinned for reproducible builds. Safe to delete this step after you've
+      # committed Gemfile.lock.
+      - name: Upload resolved Gemfile.lock
+        uses: actions/upload-artifact@v4
+        with:
+          name: gemfile-lock
+          path: Gemfile.lock
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

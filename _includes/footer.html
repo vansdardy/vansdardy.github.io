@@ -1,0 +1,10 @@
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <p class="site-footer__name">{{ site.title }}</p>
+    {% include social.html %}
+    <p class="site-footer__meta">
+      © {{ site.time | date: '%Y' }} {{ site.author }} ·
+      Built with <a href="https://jekyllrb.com/">Jekyll</a>, deployed via GitHub Actions.
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,112 @@
+---
+layout: default
+---
+{%- comment -%}
+  Renders a full CV from _data/resume.yml. You never edit this file to update
+  your résumé — only the YAML. Every section below is optional: omit a key in
+  the data file and its block simply doesn't render.
+{%- endcomment -%}
+{%- assign r = site.data.resume -%}
+
+<article class="resume container">
+
+  <header class="resume__header">
+    <div>
+      <h1 class="resume__name">{{ r.basics.name }}</h1>
+      {% if r.basics.label %}<p class="resume__label">{{ r.basics.label }}</p>{% endif %}
+    </div>
+    <ul class="resume__contacts">
+      {% if r.basics.location %}<li>{{ r.basics.location }}</li>{% endif %}
+      {% if r.basics.email %}<li><a href="mailto:{{ r.basics.email }}">{{ r.basics.email }}</a></li>{% endif %}
+      {% for p in r.basics.profiles %}
+        <li><a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.network }}</a></li>
+      {% endfor %}
+    </ul>
+    <p class="resume__print no-print">
+      <button class="btn btn--small" type="button" onclick="window.print()">Save as PDF / Print</button>
+    </p>
+  </header>
+
+  {% if r.basics.summary %}
+    <section class="resume__section">
+      <div class="resume__summary">{{ r.basics.summary | markdownify }}</div>
+    </section>
+  {% endif %}
+
+  {% if r.work and r.work.size > 0 %}
+    <section class="resume__section">
+      <h2 class="resume__heading">Experience</h2>
+      {% for job in r.work %}
+        <div class="entry">
+          <div class="entry__head">
+            <h3 class="entry__title">
+              {{ job.position }}{% if job.company %} · <span class="entry__org">{% if job.url %}<a href="{{ job.url }}" target="_blank" rel="noopener">{{ job.company }}</a>{% else %}{{ job.company }}{% endif %}</span>{% endif %}
+            </h3>
+            <span class="entry__dates">{{ job.start }}{% if job.end %} – {{ job.end }}{% endif %}</span>
+          </div>
+          {% if job.location %}<p class="entry__sub">{{ job.location }}</p>{% endif %}
+          {% if job.summary %}<div class="entry__body">{{ job.summary | markdownify }}</div>{% endif %}
+          {% if job.highlights %}
+            <ul class="entry__points">
+              {% for h in job.highlights %}<li>{{ h | markdownify | remove: '<p>' | remove: '</p>' }}</li>{% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </section>
+  {% endif %}
+
+  {% if r.education and r.education.size > 0 %}
+    <section class="resume__section">
+      <h2 class="resume__heading">Education</h2>
+      {% for ed in r.education %}
+        <div class="entry">
+          <div class="entry__head">
+            <h3 class="entry__title">
+              {{ ed.institution }}{% if ed.area %} · <span class="entry__org">{{ ed.studyType }} {{ ed.area }}</span>{% endif %}
+            </h3>
+            <span class="entry__dates">{{ ed.start }}{% if ed.end %} – {{ ed.end }}{% endif %}</span>
+          </div>
+          {% if ed.location %}<p class="entry__sub">{{ ed.location }}</p>{% endif %}
+          {% if ed.highlights %}
+            <ul class="entry__points">
+              {% for h in ed.highlights %}<li>{{ h | markdownify | remove: '<p>' | remove: '</p>' }}</li>{% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </section>
+  {% endif %}
+
+  {% if r.skills and r.skills.size > 0 %}
+    <section class="resume__section">
+      <h2 class="resume__heading">Skills</h2>
+      <div class="skills">
+        {% for group in r.skills %}
+          <div class="skills__group">
+            <h3 class="skills__cat">{{ group.category }}</h3>
+            <ul class="skills__items">
+              {% for item in group.items %}<li class="tag">{{ item }}</li>{% endfor %}
+            </ul>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if r.awards and r.awards.size > 0 %}
+    <section class="resume__section">
+      <h2 class="resume__heading">Awards &amp; Honors</h2>
+      {% for a in r.awards %}
+        <div class="entry entry--compact">
+          <div class="entry__head">
+            <h3 class="entry__title">{{ a.title }}{% if a.awarder %} · <span class="entry__org">{{ a.awarder }}</span>{% endif %}</h3>
+            <span class="entry__dates">{{ a.date }}</span>
+          </div>
+          {% if a.summary %}<p class="entry__sub">{{ a.summary }}</p>{% endif %}
+        </div>
+      {% endfor %}
+    </section>
+  {% endif %}
+
+</article>

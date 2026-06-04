@@ -1,0 +1,72 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# YOUR RÉSUMÉ.  This single file drives the entire /resume/ page.
+# Every section is optional — delete a block and it vanishes from the page.
+# Bullet text and summaries accept **Markdown** (bold, links, `code`).
+# ─────────────────────────────────────────────────────────────────────────────
+
+basics:
+  name: "Wenyou (Tobias) Tian"
+  label: "CS + Economics Student"          # the line under your name
+  email: "tianwenyoutoby@gmail.com"
+  location: "City, Country"
+  summary: >
+    Computer Science and Economics student focused on the overlap of software
+    and markets. I build correct, fast, well-tested systems and enjoy turning
+    fuzzy problems into shippable tools. Comfortable across the stack in
+    **TypeScript** and **Python**.
+  profiles:
+    - network: "GitHub"
+      url: "https://github.com/vansdardy"
+    - network: "LinkedIn"
+      url: "https://www.linkedin.com/in/your-handle"
+
+work:
+  - company: "Acme Analytics"
+    position: "Software Engineering Intern"
+    url: "https://example.com"
+    location: "Remote"
+    start: "Jun 2025"
+    end: "Aug 2025"
+    summary: "Worked on the data platform team building internal market-data tooling."
+    highlights:
+      - "Built a **TypeScript** service that cut nightly ETL runtime by ~40% by batching API calls and adding a Redis cache layer."
+      - "Shipped a React dashboard used by 30+ analysts to explore pricing anomalies."
+      - "Added the team's first integration test suite, catching 3 regressions before release."
+
+  - company: "University Econ Lab"
+    position: "Undergraduate Research Assistant"
+    location: "On campus"
+    start: "Jan 2025"
+    end: "Present"
+    summary: "Support empirical research on labor markets under Prof. Example."
+    highlights:
+      - "Cleaned and merged a 12M-row panel dataset in **Python/pandas**, documenting a reproducible pipeline."
+      - "Replicated two published regression specifications and automated the figure generation."
+
+education:
+  - institution: "Your University"
+    studyType: "B.A."
+    area: "Computer Science & Economics"
+    location: "City, Country"
+    start: "2023"
+    end: "2027 (expected)"
+    highlights:
+      - "Relevant coursework: Algorithms, Distributed Systems, Econometrics, Game Theory, Machine Learning."
+      - "GPA: 3.9/4.0 · Dean's List (all semesters)."
+
+skills:
+  - category: "Languages"
+    items: ["TypeScript", "Python", "SQL", "Go", "R"]
+  - category: "Frameworks & Tools"
+    items: ["React", "Node.js", "pandas", "PostgreSQL", "Docker", "Git"]
+  - category: "Economics"
+    items: ["Econometrics", "Causal inference", "Game theory", "Market design"]
+
+awards:
+  - title: "1st Place, University Hackathon"
+    awarder: "ACM Student Chapter"
+    date: "2025"
+    summary: "Built a real-time options-pricing visualizer in 24 hours."
+  - title: "Merit Scholarship"
+    awarder: "Your University"
+    date: "2023 – present"

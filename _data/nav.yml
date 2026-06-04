@@ -1,0 +1,8 @@
+# Top navigation links. Add a line here to add a nav item (e.g. a future
+# "Writing" section). Order = display order.
+- title: About
+  url: /
+- title: Résumé
+  url: /resume/
+- title: Projects
+  url: /projects/

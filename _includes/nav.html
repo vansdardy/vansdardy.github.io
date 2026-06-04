@@ -1,0 +1,24 @@
+<header class="site-header">
+  <nav class="nav" aria-label="Primary">
+    <a class="nav__brand" href="{{ '/' | relative_url }}">
+      {{ site.title }}<span class="nav__dot">.</span>
+    </a>
+
+    <div class="nav__links">
+      {%- comment -%} Links are data-driven: edit the list in _data/nav.yml {%- endcomment -%}
+      {%- assign current = page.url -%}
+      {%- for item in site.data.nav -%}
+        {%- assign href = item.url | relative_url -%}
+        {%- assign active = "" -%}
+        {%- if page.url == item.url or item.url != "/" and page.url contains item.url -%}
+          {%- assign active = "is-active" -%}
+        {%- endif -%}
+        <a class="nav__link {{ active }}" href="{{ href }}">{{ item.title }}</a>
+      {%- endfor -%}
+
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle theme">
+        <span class="theme-toggle__icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,13 @@
+# Jekyll build output & caches
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Bundler (if you ever install gems locally into the repo)
+vendor/
+.bundle/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
