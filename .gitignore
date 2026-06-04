@@ -8,8 +8,10 @@ _site/
 vendor/
 .bundle/
 
-# Local-only agent guidance — not for the public repo
+# Local-only agent+personal guidance — not for the public repo
 CLAUDE.md
+to_self.md
+.gitignore
 
 # OS / editor cruft
 .DS_Store
