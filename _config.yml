@@ -20,13 +20,15 @@ plugins:
   - jekyll-seo-tag      # <meta> + Open Graph/Twitter cards so shared links look good
   - jekyll-sitemap      # generates /sitemap.xml for search engines
 
-# "Projects" is a content collection: one Markdown file per project in _projects/.
-# Same pattern can add a future "essays/writing" section without any rebuild —
-# just create _essays/ with an analogous block here.
+# Content collections: one Markdown file per item. "Projects" and "Blog" both
+# follow the same pattern — to add another section (e.g. "essays"), copy a block.
 collections:
   projects:
     output: true
     permalink: /projects/:name/
+  blog:
+    output: true
+    permalink: /blog/:name/
 
 # Default layout for project files so each _projects/*.md stays clean.
 # (Other pages set their own `layout:` in front matter. We deliberately do NOT
@@ -35,6 +37,8 @@ collections:
 defaults:
   - scope: { path: "", type: "projects" }
     values: { layout: "project" }
+  - scope: { path: "", type: "blog" }
+    values: { layout: "post" }
 
 # Markdown / engine
 markdown: kramdown

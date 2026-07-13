@@ -11,7 +11,7 @@ layout: default
 <section class="hero container">
   <p class="hero__eyebrow">{{ site.tagline }}</p>
   <h1 class="hero__title">
-    Hi, I’m <span class="hero__name">{{ r.basics.name | default: site.author }}</span>.
+    Hi, I'm <span class="hero__name">{{ r.basics.name | default: site.author }}</span>.
   </h1>
 
   <div class="hero__lede prose">
@@ -21,6 +21,7 @@ layout: default
   <div class="hero__actions">
     <a class="btn" href="{{ '/resume/' | relative_url }}">Read my résumé</a>
     <a class="btn btn--ghost" href="{{ '/projects/' | relative_url }}">See projects</a>
+    <a class="btn btn--ghost" href="{{ '/blog/' | relative_url }}">Read my blog</a>
   </div>
 
   <div class="hero__social">

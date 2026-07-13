@@ -1,0 +1,28 @@
+---
+layout: default
+title: Blog
+description: "Writing — notes on software, economics, and things I'm learning."
+permalink: /blog/
+---
+<section class="container section">
+  <header class="page-head">
+    <h1>Blog</h1>
+    <p class="page-head__subtitle">Notes on software, economics, and things I’m learning.</p>
+  </header>
+
+  {%- assign posts = site.blog | sort: "date" | reverse -%}
+  <div class="cards">
+    {% for post in posts %}
+      <a class="card" href="{{ post.url | relative_url }}">
+        <div class="card__top">
+          <h2 class="card__title">{{ post.title }}</h2>
+          {% if post.date %}<span class="card__year">{{ post.date | date: "%b %-d, %Y" }}</span>{% endif %}
+        </div>
+        {% if post.summary %}<p class="card__summary">{{ post.summary }}</p>{% endif %}
+        <div class="card__tags">
+          {% for t in post.tags limit: 5 %}<span class="tag">{{ t }}</span>{% endfor %}
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
