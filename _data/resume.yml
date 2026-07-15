@@ -6,7 +6,7 @@
 
 basics:
   name: "Wenyou (Tobias) Tian"
-  label: "Honours Bachelor of Science in Computer Science, Bachelor of Arts in Econonmics"          # the line under your name
+  label: "Honours Bachelor of Science in Computer Science, Bachelor of Arts in Economics"          # the line under your name
   email: "wtian02@student.ubc.ca"
   location: "Markham, Ontario, Canada"
   summary: >
@@ -51,7 +51,7 @@ work:
 
 education:
   - institution: "University of British Columbia"
-    studyType: "Bachelor of Science"
+    studyType: "Bachelor of Science,"
     area: "Honours in Computer Science"
     location: "Vancouver, BC, Canada"
     start: "Sep. 2022"
@@ -61,7 +61,7 @@ education:
       - "GPA: 90.4/100"
 
   - institution: "University of British Columbia"
-    studyType: "Bachelor of Arts"
+    studyType: "Bachelor of Arts,"
     area: "Major in Economics"
     location: "Vancouver, BC, Canada"
     start: "Sep. 2022"
@@ -71,7 +71,7 @@ education:
       - "GPA: 90.4/100"
 
   - institution: "Eidgenössische Technische Hochschule Zürich (ETHZ)"
-    studyType: "Exchange Student"
+    studyType: "Exchange Student,"
     area: "Computer Science"
     location: "Zürich, Zürich, Switzerland"
     start: "Sep. 2024"
@@ -100,3 +100,4 @@ awards:
   - title: "Hugh M Brock Go Global Scholarship"
     awarder: "University of British Columbia - Go Global Office"
     date: "Sep. 2024"
+    summary: "Awarded to UBC students participating in international learning programs through Go Global."
