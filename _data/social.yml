@@ -1,8 +1,8 @@
 # Contact / social links. Shown in the footer, on the home hero, and anywhere
 # {% include social.html %} appears. Add, remove, or reorder freely.
 - label: Email
-  url: mailto:tianwenyoutoby@gmail.com
+  url: mailto:wtian02@student.ubc.ca
 - label: GitHub
   url: https://github.com/vansdardy
 - label: LinkedIn
-  url: https://www.linkedin.com/in/your-handle
+  url: https://www.linkedin.com/in/wy-t-tian/

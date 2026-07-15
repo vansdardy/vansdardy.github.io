@@ -6,67 +6,97 @@
 
 basics:
   name: "Wenyou (Tobias) Tian"
-  label: "CS + Economics Student"          # the line under your name
-  email: "tianwenyoutoby@gmail.com"
-  location: "City, Country"
+  label: "Honours Bachelor of Science in Computer Science, Bachelor of Arts in Econonmics"          # the line under your name
+  email: "wtian02@student.ubc.ca"
+  location: "Markham, Ontario, Canada"
   summary: >
-    Computer Science and Economics student focused on the overlap of software
-    and markets. I build correct, fast, well-tested systems and enjoy turning
-    fuzzy problems into shippable tools. Comfortable across the stack in
-    **TypeScript** and **Python**.
+    Eager to grasp opportunities and seek positions closely related to information technology, mathematics, natural sciences, data science, and finance. 
+    Open to research opportunities about quantum computing, theoretical computer science, econometrics, game theory, and central banking/macroeconomics.
   profiles:
     - network: "GitHub"
       url: "https://github.com/vansdardy"
     - network: "LinkedIn"
-      url: "https://www.linkedin.com/in/your-handle"
+      url: "https://www.linkedin.com/in/wy-t-tian/"
 
 work:
-  - company: "Acme Analytics"
-    position: "Software Engineering Intern"
-    url: "https://example.com"
-    location: "Remote"
-    start: "Jun 2025"
-    end: "Aug 2025"
-    summary: "Worked on the data platform team building internal market-data tooling."
+  - company: "Noah's Ark Lab - Huawei Technologies Canada"
+    position: "Software Research Engineer"
+    # url: "https://example.com"
+    location: "Markham, Ontario"
+    start: "Jan. 2026"
+    end: "Dec. 2026"
+    summary: "Worked as a research engineer who turn ideas into prototypes."
     highlights:
-      - "Built a **TypeScript** service that cut nightly ETL runtime by ~40% by batching API calls and adding a Redis cache layer."
-      - "Shipped a React dashboard used by 30+ analysts to explore pricing anomalies."
-      - "Added the team's first integration test suite, catching 3 regressions before release."
+      - "Contributed to an end-to-end LLM-driven bug resolution pipeline by structuring 1000+ UI/UX-related bug reports to assist building RAG-based systems and developing an agent-driven knowledge base for retrieving solutions from 30+ pieces of developer documentation, with ongoing SDK design for scalable integration workflows."
+      - "Prototyped a tool for converting XML-based UI metadata into hierarchical UI trees, processing 700+ screenshots to support GUI agent interaction (project later transitioned across teams)."
 
-  - company: "University Econ Lab"
-    position: "Undergraduate Research Assistant"
-    location: "On campus"
-    start: "Jan 2025"
+  - company: "University of British Columbia"
+    position: "Undergraduate Academic Assistant"
+    location: "Remote"
+    start: "Jun. 2024"
     end: "Present"
-    summary: "Support empirical research on labor markets under Prof. Example."
+    summary: "Support the backend of question banks for physics first-year undergraduate courses."
     highlights:
-      - "Cleaned and merged a 12M-row panel dataset in **Python/pandas**, documenting a reproducible pipeline."
-      - "Replicated two published regression specifications and automated the figure generation."
+      - "Reformatted and randomized more than 200 freshman-level physics problems with HTML and Markdown for frontend format display, and Python for backend question generation and randomization that assists 6+ physics professors to set up quizzes and exams, reaching hundreds of freshman students each year."
+      - "Integrated the PrairieLearn autograder system to correctly identify and grade mathematical expressions that involve alphabetical variables and physical units using the SymPy library API which has served 151 students over two years."
+
+  - company: "University of British Columbia"
+    position: "Undergraduate Teaching Assistant"
+    location: "Vancouver, BC, Canada"
+    start: "Sep. 2023"
+    end: "Apr. 2024"
+    summary: "Hosted office hours and interactive course clinics for first-year undergraduate students in mathematics and physics."
+    highlights:
+      - "Held bi-weekly office hours, tutorials, and workshops that answered questions regarding freshman-level mathematics and physics for 69 first-year students, and further encouraged voluntary learning through coding short and simple Python programs to demonstrate mathematical and physical concepts."
 
 education:
-  - institution: "Your University"
-    studyType: "B.A."
-    area: "Computer Science & Economics"
-    location: "City, Country"
-    start: "2023"
-    end: "2027 (expected)"
+  - institution: "University of British Columbia"
+    studyType: "Bachelor of Science"
+    area: "Honours in Computer Science"
+    location: "Vancouver, BC, Canada"
+    start: "Sep. 2022"
+    end: "Apr. 2028 (expected)"
     highlights:
-      - "Relevant coursework: Algorithms, Distributed Systems, Econometrics, Game Theory, Machine Learning."
-      - "GPA: 3.9/4.0 · Dean's List (all semesters)."
+      - "Relevant coursework: Algorithm Design and Analysis; Software Engineering; Computer Systems; Computer Network; Quantum Computing"
+      - "GPA: 90.4/100"
+
+  - institution: "University of British Columbia"
+    studyType: "Bachelor of Arts"
+    area: "Major in Economics"
+    location: "Vancouver, BC, Canada"
+    start: "Sep. 2022"
+    end: "Apr. 2028 (expected)"
+    highlights:
+      - "Relevant coursework: Advanced Econometrics; Game Theory; Money and Banking; Micro/Macroeconomic Analysis; Intl. Finance; Intl. Trade"
+      - "GPA: 90.4/100"
+
+  - institution: "Eidgenössische Technische Hochschule Zürich (ETHZ)"
+    studyType: "Exchange Student"
+    area: "Computer Science"
+    location: "Zürich, Zürich, Switzerland"
+    start: "Sep. 2024"
+    end: "Feb. 2025"
+    highlights:
+      - "Relevant coursework: Algorithms, Probability, Computing; Compiler Design; Computer Systems (OS + DS); Quantum Physics"
+      - "6.0/6.0 in Quantum Physics"
 
 skills:
-  - category: "Languages"
-    items: ["TypeScript", "Python", "SQL", "Go", "R"]
-  - category: "Frameworks & Tools"
-    items: ["React", "Node.js", "pandas", "PostgreSQL", "Docker", "Git"]
-  - category: "Economics"
-    items: ["Econometrics", "Causal inference", "Game theory", "Market design"]
+  - category: "Programming Languages"
+    items: ["Java", "Python", "C/C++", "R", "HTML/CSS/JavaScript/TypeScript", "OCaml", "SQL (basic)"]
+  - category: "Developer Tools"
+    items: ["Git", "VS Code", "IntelliJ IDEA", "JupyterLab/Jupyter Notebook", "Docker"]
+  - category: "Technologies and Frameworks"
+    items: ["Linux", "JUnit", "Swing", "chai-as-promised", "Node.js", "Express", "Mocha", "Yarn", "Matplotlib", "pandas", "NumPy", "SymPy", "Tidyverse", "lubridate", "haven"]
+  - category: "Workplace Methodologies"
+    items: ["OLS regression", "Hypothesis Testing", "RAG Pipelines", "Agentic AI Systems", "Data Cleaning"]
+  - category: "Spoken Languages"
+    items: ["Mandarin (Mother Tongue)", "English (Native Speaker Level)", "French (B1)", "German (A1)"]
 
 awards:
-  - title: "1st Place, University Hackathon"
-    awarder: "ACM Student Chapter"
-    date: "2025"
-    summary: "Built a real-time options-pricing visualizer in 24 hours."
-  - title: "Merit Scholarship"
-    awarder: "Your University"
-    date: "2023 – present"
+  - title: "J Fred Muir Memorial Scholarship in Science"
+    awarder: "University of British Columbia - Faculty of Science"
+    date: "Mar. 2026"
+    summary: "Awarded to students in the Faculty of Science on the recommendation of the Faculty for academic excellence."
+  - title: "Hugh M Brock Go Global Scholarship"
+    awarder: "University of British Columbia - Go Global Office"
+    date: "Sep. 2024"

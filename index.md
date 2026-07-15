@@ -3,12 +3,14 @@ layout: home
 permalink: /
 ---
 
-I’m a Computer Science and Economics student who likes building software that
-touches real markets and real people. I’m comfortable on the command line and
-work mostly in **TypeScript** and **Python** — but I care less about any one
-stack and more about shipping things that are correct, fast, and genuinely
-useful.
+I consider myself a Computer Science and Economics scholar-to-be 
+who likes to explore areas that touch real people and actual society.
+I am more than just a person who stares at VS Code and scratches his head.
+I care less about a particular technical stack or research methology,
+more about delivering novel ideas and proposing unique perspectives,
+so that I can offer my insight for the world to challenge.
 
 This site is my living résumé: a fuller picture than a one-page PDF, with the
-[projects](/projects/) and [experience](/resume/) behind it. Want to talk? The
-links below are the fastest way to reach me.
+[projects](/projects/) and [experience](/resume/) behind it.
+As of right now, it also serves as a vault of my mind in my [blog](/blog/).
+Want to talk? The links below are the fastest way to reach me.

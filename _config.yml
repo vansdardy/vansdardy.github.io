@@ -2,10 +2,9 @@
 # Site settings  —  edit these once; they flow into <title>, SEO, and footers.
 # ─────────────────────────────────────────────────────────────────────────────
 title: "Wenyou (Tobias) Tian"
-tagline: "CS + Economics"               # short phrase shown under your name
+tagline: "Aspire to become an Unorthodox Polymath"               # short phrase shown under your name
 description: >-                          # used for SEO + link previews (~1-2 sentences)
-  CS + Economics student. I build things at the intersection of software and
-  markets. Résumé, projects, and ways to reach me.
+  Wenyou (Tobias) Tian's personal webpage. Résumé, projects, and ways to reach me.
 author: "Wenyou (Tobias) Tian"
 
 # This is a GitHub *user* page (vansdardy.github.io) → served at the domain root.
