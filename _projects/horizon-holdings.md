@@ -3,13 +3,13 @@ title: "Horizon Holdings"
 summary: "A desktop app that tracks a simulated fund consisting of 78 equities across multiple developed markets, picked by AI, adhering to Warren Buffet's investment style"
 year: 2026
 featured: true
-tech: ["Python", "Electron", "Claude Code"]
+tech: ["Python", "SQLite", "Electron", "Claude Code"]
 repo: "https://github.com/vansdardy/horizon-holdings-app"
 ---
 
 ## What it is
 
-This is a desktop application that is **completely coded through Claude Code**.
+This is a desktop application that is ***completely coded through Claude Code***.
 The application design choices were made by me, and I test-use the application myself to look for bugs.
 This application first acts as a tracker for a simulated fund which consists of 78 equities across developed markets like the USA, Canada, Japan, the UK, and several EU countries.
 These equities were picked by AI adhering Warren Buffet's value investing paradigm, with loosened conditions on some chokepoint firms like ASML.
