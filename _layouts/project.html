@@ -2,7 +2,9 @@
 layout: default
 ---
 <article class="prose container project-page">
-  <p class="project-page__back"><a href="{{ '/projects/' | relative_url }}">← All projects</a></p>
+  {%- comment -%} Shared by projects, papers, publications: back link follows the collection. {%- endcomment -%}
+  {%- assign section = page.collection | default: "projects" -%}
+  <p class="project-page__back"><a href="{{ '/' | append: section | append: '/' | relative_url }}">← All {{ section }}</a></p>
 
   <header class="page-head">
     <h1>{{ page.title }}</h1>

@@ -19,12 +19,18 @@ plugins:
   - jekyll-seo-tag      # <meta> + Open Graph/Twitter cards so shared links look good
   - jekyll-sitemap      # generates /sitemap.xml for search engines
 
-# Content collections: one Markdown file per item. "Projects" and "Blog" both
-# follow the same pattern — to add another section (e.g. "essays"), copy a block.
+# Content collections: one Markdown file per item. Projects, Papers, Publications
+# and Blog all follow the same pattern — to add another section, copy a block.
 collections:
   projects:
     output: true
     permalink: /projects/:name/
+  papers:
+    output: true
+    permalink: /papers/:name/
+  publications:
+    output: true
+    permalink: /publications/:name/
   blog:
     output: true
     permalink: /blog/:name/
@@ -35,6 +41,10 @@ collections:
 # HTML layout and break the stylesheet.)
 defaults:
   - scope: { path: "", type: "projects" }
+    values: { layout: "project" }
+  - scope: { path: "", type: "papers" }
+    values: { layout: "project" }
+  - scope: { path: "", type: "publications" }
     values: { layout: "project" }
   - scope: { path: "", type: "blog" }
     values: { layout: "post" }
