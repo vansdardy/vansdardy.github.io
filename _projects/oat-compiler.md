@@ -2,7 +2,7 @@
 title: "Oat Compiler"
 summary: "A complete end-to-end compiler that can compile the Oat language into Assembly code with optimizations."
 year: 2024
-featured: true
+featured: false
 tech: ["OCaml", "VS Code", "Docker", "Linux"]
 ---
 
