@@ -29,12 +29,12 @@ layout: default
   </div>
 </section>
 
-{%- assign featured = site.projects | where: "featured", true | sort: "year" | reverse -%}
+{%- comment -%} Featured = anything marked `featured: true` in projects, papers, or publications. {%- endcomment -%}
+{%- assign featured = site.projects | concat: site.papers | concat: site.publications | where: "featured", true | sort: "year" | reverse -%}
 {%- if featured.size > 0 -%}
 <section class="container section">
   <div class="section__head">
     <h2 class="section__title">Featured</h2>
-    <a class="section__more" href="{{ '/projects/' | relative_url }}">All projects →</a>
   </div>
 
   <div class="cards">
