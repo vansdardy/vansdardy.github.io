@@ -4,7 +4,7 @@ summary: "A research project that seeks the root cause of UBC dining halls' food
 year: 2024
 featured: true
 tech: ["R", "Tidyverse", "Econometric Analysis"]
-repo: "https://github.com/vansdardy/UBC-Note-Collections/blob/a140138834b2a4118815498371243515a7ab56b4/Year%202/ECON%20326/Term%20Project/More-Diners-More-Waste-A-Research-on-UBC-Dining-Halls-Food-Waste.pdf"
+paper: "/assets/files/More-Diners-More-Waste-A-Research-on-UBC-Dining-Halls-Food-Waste.pdf"
 ---
 
 ## What it is

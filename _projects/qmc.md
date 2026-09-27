@@ -5,6 +5,7 @@ year: 2025
 featured: false
 tech: ["Python", "JupyterLab/Jupyter Notebook"]
 repo: "https://github.com/vansdardy/Quantum-Monte-Carlo-CPSC-436Q"
+paper: "/assets/files/quantum-monte-carlo.pdf"
 ---
 
 ## What it is
