@@ -4,7 +4,7 @@ summary: "A research project that seeks to determine Earth's albedo through phot
 year: 2023
 featured: false
 tech: ["Python", "NumPy", "Matplotlib", "Mathematical Modelling"]
-repo: "https://github.com/vansdardy/UBC-Note-Collections/blob/960e115f5d17a7a4611795b78dd8a9cbc8735e96/Year%201/Determining-the-Albedo-of-the-Earth-via-Relative-Photometry-on-the-Moon_TobiasTianJacobZhu_JonathanMassey-Allard.pdf"
+paper: "/assets/files/earth-albedo.pdf"
 ---
 
 ## What it is

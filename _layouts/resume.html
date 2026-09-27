@@ -22,9 +22,10 @@ layout: default
         <li><a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.network }}</a></li>
       {% endfor %}
     </ul>
-    <p class="resume__print no-print">
-      <button class="btn btn--small" type="button" onclick="window.print()">Save as PDF / Print</button>
-    </p>
+    {%- capture resume_pdf -%}{% include pdf-button.html href=r.basics.pdf label="Résumé (PDF)" %}{%- endcapture -%}
+    {%- if resume_pdf != "" -%}
+      <p class="no-print">{{ resume_pdf }}</p>
+    {%- endif -%}
   </header>
 
   {% if r.basics.summary %}

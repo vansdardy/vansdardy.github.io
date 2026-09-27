@@ -1,0 +1,15 @@
+{%- comment -%}
+  A button that opens a PDF in a new browser tab.
+  Usage: {% include pdf-button.html href=page.paper label="Paper (PDF)" %}
+  `href` is either a path to a file in the repo (e.g. /assets/files/x.pdf) or a
+  full https:// URL. A repo path only renders once that file actually exists,
+  so a missing PDF never produces a broken link.
+{%- endcomment -%}
+{%- assign pdf_href = include.href -%}
+{%- if pdf_href -%}
+  {%- assign pdf_scheme = pdf_href | slice: 0, 4 -%}
+  {%- assign pdf_file = site.static_files | where: "path", pdf_href | first -%}
+  {%- if pdf_scheme == "http" or pdf_file -%}
+    <a class="btn btn--small" href="{{ pdf_href | relative_url }}" target="_blank" rel="noopener">{{ include.label | default: "PDF" }} ↗</a>
+  {%- endif -%}
+{%- endif -%}

@@ -14,6 +14,7 @@ layout: default
     </div>
 
     <div class="project-page__links">
+      {% include pdf-button.html href=page.paper label="Paper (PDF)" %}
       {% if page.repo %}<a class="btn btn--small" href="{{ page.repo }}" target="_blank" rel="noopener">Source ↗</a>{% endif %}
       {% if page.demo %}<a class="btn btn--small" href="{{ page.demo }}" target="_blank" rel="noopener">Live demo ↗</a>{% endif %}
     </div>

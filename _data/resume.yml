@@ -9,6 +9,7 @@ basics:
   label: "Honours Bachelor of Science in Computer Science, Bachelor of Arts in Economics"          # the line under your name
   email: "wtian02@student.ubc.ca"
   location: "Markham, Ontario, Canada"
+  pdf: "/assets/files/resume.pdf"   # your LaTeX PDF; the button appears once this file exists
   summary: >
     Eager to grasp opportunities and seek positions closely related to information technology, mathematics, natural sciences, data science, and finance. 
     Open to research opportunities about quantum computing, theoretical computer science, econometrics, game theory, and central banking/macroeconomics.
