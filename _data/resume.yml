@@ -50,6 +50,16 @@ work:
     highlights:
       - "Held bi-weekly office hours, tutorials, and workshops that answered questions regarding freshman-level mathematics and physics for 69 first-year students, and further encouraged voluntary learning through coding short and simple Python programs to demonstrate mathematical and physical concepts."
 
+  - company: "University of British Columbia, Law Library"
+    position: "Undergraduate Teaching Assistant"
+    location: "Vancouver, BC, Canada"
+    start: "Sep. 2023"
+    end: "Apr. 2024"
+    summary: "Served library patrons, and organized hundreds of shelves of legal documents and literature with Library of Congress System."
+    highlights:
+      - "Organized and rearranged books, journals, law statutes etc., by the Library of Congress Call Number System, across about 500 shelves each semester."
+      - "Maintained book circulation within and across campuses, including assisting patrons with requested book information and personal inquiries, including answering phone calls."
+
 education:
   - institution: "University of British Columbia"
     studyType: "Bachelor of Science,"
