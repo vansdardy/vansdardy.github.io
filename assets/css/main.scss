@@ -253,11 +253,12 @@ main { flex: 1 0 auto; }
 .entry::after { content: ""; position: absolute; left: 3.5px; top: 1.2rem; bottom: -1.2rem; width: 1px; background: var(--border); }
 .entry:last-child::after { display: none; }
 .entry--compact { margin-bottom: 1rem; }
-.entry__head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .3rem 1rem; }
+/* Entry heading = three stacked lines: title / org / meta (dates · location). */
 .entry__title { font-size: 1.1rem; font-weight: 600; }
-.entry__org { font-weight: 500; color: var(--text); }
+.entry__org { font-weight: 500; color: var(--text); font-size: .98rem; margin-top: .2rem; }
 .entry__org a { color: var(--accent); }
-.entry__dates { font-family: var(--font-mono); font-size: .82rem; color: var(--muted); white-space: nowrap; }
+.entry__meta { font-family: var(--font-mono); font-size: .8rem; color: var(--muted); margin-top: .15rem; }
+.entry__meta span + span::before { content: "·"; margin: 0 .55em; }
 .entry__sub { color: var(--muted); font-size: .9rem; margin-top: .15rem; }
 .entry__body { color: var(--muted); margin-top: .4rem; }
 .entry__points { margin-top: .55rem; padding-left: 1.1rem; color: var(--muted); }

@@ -1,0 +1,22 @@
+{%- comment -%}
+  Stacked heading for one résumé entry (experience / education / award):
+    line 1  title     — position, institution, or award name
+    line 2  org       — workplace, degree, or awarder (optionally linked)
+    line 3  meta      — dates · location
+  Params: title, org, org_url, from, to, location (all optional except title).
+{%- endcomment -%}
+<h3 class="entry__title">{{ include.title }}</h3>
+{%- assign org = include.org | strip -%}
+{%- if org != "" -%}
+  <p class="entry__org">
+    {%- if include.org_url -%}<a href="{{ include.org_url }}" target="_blank" rel="noopener">{{ org }}</a>{%- else -%}{{ org }}{%- endif -%}
+  </p>
+{%- endif -%}
+{%- capture when -%}{{ include.from }}{% if include.to %} – {{ include.to }}{% endif %}{%- endcapture -%}
+{%- assign when = when | strip -%}
+{%- if when != "" or include.location -%}
+  <p class="entry__meta">
+    {%- if when != "" -%}<span>{{ when }}</span>{%- endif -%}
+    {%- if include.location -%}<span>{{ include.location }}</span>{%- endif -%}
+  </p>
+{%- endif -%}

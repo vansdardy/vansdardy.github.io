@@ -39,13 +39,7 @@ layout: default
       <h2 class="resume__heading">Experience</h2>
       {% for job in r.work %}
         <div class="entry">
-          <div class="entry__head">
-            <h3 class="entry__title">
-              {{ job.position }}{% if job.company %} · <span class="entry__org">{% if job.url %}<a href="{{ job.url }}" target="_blank" rel="noopener">{{ job.company }}</a>{% else %}{{ job.company }}{% endif %}</span>{% endif %}
-            </h3>
-            <span class="entry__dates">{{ job.start }}{% if job.end %} – {{ job.end }}{% endif %}</span>
-          </div>
-          {% if job.location %}<p class="entry__sub">{{ job.location }}</p>{% endif %}
+          {% include resume-entry-head.html title=job.position org=job.company org_url=job.url from=job.start to=job.end location=job.location %}
           {% if job.summary %}<div class="entry__body">{{ job.summary | markdownify }}</div>{% endif %}
           {% if job.highlights %}
             <ul class="entry__points">
@@ -62,13 +56,8 @@ layout: default
       <h2 class="resume__heading">Education</h2>
       {% for ed in r.education %}
         <div class="entry">
-          <div class="entry__head">
-            <h3 class="entry__title">
-              {{ ed.institution }}{% if ed.area %} · <span class="entry__org">{{ ed.studyType }} {{ ed.area }}</span>{% endif %}
-            </h3>
-            <span class="entry__dates">{{ ed.start }}{% if ed.end %} – {{ ed.end }}{% endif %}</span>
-          </div>
-          {% if ed.location %}<p class="entry__sub">{{ ed.location }}</p>{% endif %}
+          {%- capture degree -%}{{ ed.studyType }} {{ ed.area }}{%- endcapture -%}
+          {% include resume-entry-head.html title=ed.institution org=degree from=ed.start to=ed.end location=ed.location %}
           {% if ed.highlights %}
             <ul class="entry__points">
               {% for h in ed.highlights %}<li>{{ h | markdownify | remove: '<p>' | remove: '</p>' }}</li>{% endfor %}
@@ -100,10 +89,7 @@ layout: default
       <h2 class="resume__heading">Awards &amp; Honors</h2>
       {% for a in r.awards %}
         <div class="entry entry--compact">
-          <div class="entry__head">
-            <h3 class="entry__title">{{ a.title }}{% if a.awarder %} · <span class="entry__org">{{ a.awarder }}</span>{% endif %}</h3>
-            <span class="entry__dates">{{ a.date }}</span>
-          </div>
+          {% include resume-entry-head.html title=a.title org=a.awarder from=a.date %}
           {% if a.summary %}<p class="entry__sub">{{ a.summary }}</p>{% endif %}
         </div>
       {% endfor %}
