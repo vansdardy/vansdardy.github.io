@@ -3,6 +3,7 @@ title: Monty Hall Problem -- Why the answer is not 1/2, or is it?
 date: 2026-10-04
 summary: Explaining why the usual answer of Monty Hall problem is not as easy as it seems.
 tags: ["数学", "Mathematics", "概率论", "Probability Theory", "条件概率", "Conditional Probability", "博弈论", "Game Theory"]
+status: incomplete
 ---
 
 The first time that I had heard about the Monty Hall problem was when I was watching the film *21* starring Kevin Spacey. The story and the message of the film were cool and educational, but that question the professor asked our protagonist had stirred my confusion for a very long time. I have already attempted explaining the answer to this question at least 2 or 3 times, verbally and in writing form. Yet, I still feel something is missing. Therefore, I am going have another go at this, and dissect many confusions about this problem even further.
