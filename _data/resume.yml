@@ -28,6 +28,7 @@ work:
     end: "Dec. 2026"
     summary: "Worked as a research engineer who turn ideas into prototypes."
     highlights:
+      - "Built a YOLOv8 popup-detection training, tuning, and ONNX deployment pipeline for automated foldable-phone UX compliance checks; fixed hidden optimizer and hyperparameter-search defects, added multi-seed evaluation and negative-sample training, raising validation mAP50-95 from 0.845 to 0.918 and reaching 95% accuracy from 82% on 194 decidable downstream rule cases."
       - "Contributed to an end-to-end LLM-driven bug resolution pipeline by structuring 1000+ UI/UX-related bug reports to assist building RAG-based systems and developing an agent-driven knowledge base for retrieving solutions from 30+ pieces of developer documentation, with ongoing SDK design for scalable integration workflows."
       - "Prototyped a tool for converting XML-based UI metadata into hierarchical UI trees, processing 700+ screenshots to support GUI agent interaction (project later transitioned across teams)."
 
