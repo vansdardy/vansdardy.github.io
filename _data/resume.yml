@@ -9,7 +9,7 @@ basics:
   label: "Honours Bachelor of Science in Computer Science, Bachelor of Arts in Economics"          # the line under your name
   email: "wtian02@student.ubc.ca"
   location: "Markham, Ontario, Canada"
-  pdf: "/assets/files/complete-resume-2026oct-v2.pdf"   # your LaTeX PDF; the button appears once this file exists
+  pdf: "/assets/files/complete-resume-2026nov-v1.pdf"   # your LaTeX PDF; the button appears once this file exists
   summary: >
     Eager to grasp opportunities and seek positions closely related to information technology, mathematics, natural sciences, data science, and finance. 
     Open to research opportunities about quantum computing, theoretical computer science, econometrics, game theory, and central banking/macroeconomics.
@@ -28,8 +28,8 @@ work:
     end: "Dec. 2026"
     summary: "Worked as a research engineer who turn ideas into prototypes."
     highlights:
-      - "Built a YOLOv8 popup-detection training, tuning, and ONNX deployment pipeline for automated foldable-phone UX compliance checks; fixed hidden optimizer and hyperparameter-search defects, added multi-seed evaluation and negative-sample training, raising validation mAP50-95 from 0.845 to 0.918 and reaching 95% accuracy from 82% on 194 decidable downstream rule cases."
-      - "Contributed to an end-to-end LLM-driven bug resolution pipeline by structuring 1000+ UI/UX-related bug reports to assist building RAG-based systems and developing an agent-driven knowledge base for retrieving solutions from 30+ pieces of developer documentation, with ongoing SDK design for scalable integration workflows."
+      - "Rebuilt the training and hyperparameter-search pipeline for a phone screenshot popup detector fine-tuned from a YOLOv8 model that checks whether the phone application behaves according to UI/UX standards or not automatically; Fixed an incorrect optimizer fallback, reactivated a previously silent training mechanism, swapped out an outdated selection metric, and enforced multi-seed scoring between tuning hyperparameters and training the model; Ran 12 controlled experiments and curated a de-duplicated, leakage-free training set; Described efforts cut false popup detections by 85% (20 → 3 out of 262) and unresolved end-to-end cases by 40% (10 → 6 out of 90) with zero wrong verdicts, and improved accuracy from 82% to 95%."
+      - "Led the design and implementation of a knowledge base harness, a TypeScript OpenCode plugin for querying large-scale knowledge bases, using a four-layer “deterministic kernel + LLM semantic agents” architecture aiming to process contents of at least 15,000 characters efficiently; Delivered a complete version which processes internal corporate design documents with a total content of 13,500+ characters, supporting 3 core functions of knowledge base initialization, query, and incremental update, aiding other developers to adhere to design guidelines and resolve bugs."
       - "Prototyped a tool for converting XML-based UI metadata into hierarchical UI trees, processing 700+ screenshots to support GUI agent interaction (project later transitioned across teams)."
 
   - company: "University of British Columbia"
