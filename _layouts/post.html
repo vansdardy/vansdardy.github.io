@@ -7,10 +7,17 @@ layout: default
   <header class="page-head">
     <h1>{{ page.title }}</h1>
 
-    <div class="project-page__meta">
-      {% if page.date %}<span class="badge">{{ page.date | date: "%b %-d, %Y" }}</span>{% endif %}
-      {% for t in page["tags-en"] %}<span class="tag">{{ t }}</span>{% endfor %}
-      {% for t in page["tags-zh"] %}<span class="tag" lang="zh">{{ t }}</span>{% endfor %}
+    {%- comment -%} Three rows: date / English tags / Chinese tags (each only if present). {%- endcomment -%}
+    <div class="post-meta">
+      {%- if page.date -%}
+        <div class="post-meta__row"><span class="badge">{{ page.date | date: "%b %-d, %Y" }}</span></div>
+      {%- endif -%}
+      {%- if page["tags-en"].size > 0 -%}
+        <div class="post-meta__row">{% for t in page["tags-en"] %}<span class="tag">{{ t }}</span>{% endfor %}</div>
+      {%- endif -%}
+      {%- if page["tags-zh"].size > 0 -%}
+        <div class="post-meta__row" lang="zh">{% for t in page["tags-zh"] %}<span class="tag">{{ t }}</span>{% endfor %}</div>
+      {%- endif -%}
     </div>
   </header>
 

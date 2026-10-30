@@ -259,6 +259,9 @@ main { flex: 1 0 auto; }
 .project-page__back { margin-bottom: 1rem; }
 .project-page__back a { font-family: var(--font-mono); font-size: .85rem; color: var(--muted); }
 .project-page__meta { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1rem; }
+/* Blog post header: date, English tags, Chinese tags on separate rows. */
+.post-meta { display: grid; gap: .55rem; margin-top: 1rem; }
+.post-meta__row { display: flex; flex-wrap: wrap; gap: .4rem; }
 .project-page__links { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.2rem; }
 
 /* ============================================================================
