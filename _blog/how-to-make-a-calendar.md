@@ -2,7 +2,8 @@
 title: How to Make a Calendar
 date: 2026-08-16
 summary: Designing a Calendar from Scratch
-tags: ["数学", "Mathematics", "天文学", "Astronomy"]
+tags-en: ["Mathematics", "Astronomy"]
+tags-zh: ["数学", "天文学"]
 status: incomplete
 ---
 

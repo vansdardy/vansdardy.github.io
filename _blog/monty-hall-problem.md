@@ -2,7 +2,8 @@
 title: Monty Hall Problem -- Why the answer is not 1/2, or is it?
 date: 2026-10-04
 summary: Explaining why the usual answer of Monty Hall problem is not as easy as it seems.
-tags: ["数学", "Mathematics", "概率论", "Probability Theory", "条件概率", "Conditional Probability", "博弈论", "Game Theory"]
+tags-en: ["Mathematics", "Probability Theory", "Conditional Probability", "Game Theory"]
+tags-zh: ["数学", "概率论", "条件概率", "博弈论"]
 status: incomplete
 ---
 
