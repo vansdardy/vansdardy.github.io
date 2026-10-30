@@ -1,5 +1,7 @@
 {%- comment -%}
-  One navigation card. Usage: {% include tile.html item=<nav.yml entry> group="Academics" %}
+  One navigation card. Usage: include tile.html with item=(a nav.yml entry) and
+  optional group="Academics". (No real tag syntax in this comment: Liquid 4
+  still parses tags inside comments, and an invalid one fails the build.)
   `item` needs title + url; icon + description are optional. `group` adds a small
   label in the corner (used for pages that live under a dropdown).
 {%- endcomment -%}
