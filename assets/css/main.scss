@@ -118,13 +118,18 @@ main { flex: 1 0 auto; }
 .nav__dot { color: var(--accent); }
 .nav__links { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: .35rem; }
 .nav__link {
-  color: var(--muted); padding: .4rem .7rem; border-radius: 8px;
+  --nav-pad-x: .7rem;
+  display: block; position: relative;
+  color: var(--muted); padding: .4rem var(--nav-pad-x); border-radius: 8px;
   font-size: .95rem; font-weight: 500; text-decoration: none;
 }
 .nav__link:hover { color: var(--text); background: color-mix(in srgb, var(--accent) 10%, transparent); text-decoration: none; }
 .nav__link.is-active { color: var(--text); }
+/* The active underline is absolutely positioned so it never changes a link's
+   height. (A block-level ::after pushed grouped links like Academics out of line.) */
 .nav__link.is-active::after {
-  content: ""; display: block; height: 2px; margin-top: 2px; border-radius: 2px;
+  content: ""; position: absolute; left: var(--nav-pad-x); right: var(--nav-pad-x);
+  bottom: .15rem; height: 2px; border-radius: 2px;
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
 }
 
@@ -381,5 +386,5 @@ main { flex: 1 0 auto; }
   .nav { flex-wrap: wrap; row-gap: .4rem; }
   .nav__links { justify-content: flex-start; }
   .nav__links { gap: .1rem; }
-  .nav__link { padding: .35rem .5rem; font-size: .9rem; }
+  .nav__link { --nav-pad-x: .5rem; padding-block: .35rem; font-size: .9rem; }
 }
