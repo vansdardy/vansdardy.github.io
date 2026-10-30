@@ -8,3 +8,7 @@ files: ["/assets/files/course_notes/2022-23/scie001_math_w1.pdf", "/assets/files
 ## Course Description
 
 Science One is an immersive program that combines different subjects—Biology, Chemistry, Mathematics, and Physics—in a unified, integrated format. Science One is built around community, a place where you can immerse yourself in science. Being a small, cohort based program, Science One is a place to meet people who want more out of their science education.
+
+## Remarks
+
+The PDF files from left to right refer to: Term 1 Mathematics, Term 2 Mathematics, Term 2 Physics, Term 2 Chemistry, Term 2 Biology.

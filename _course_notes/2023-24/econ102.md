@@ -9,6 +9,6 @@ files: ["/assets/files/course_notes/2023-24/econ102.pdf"]
 
 Elements of theory and of Canadian policy and institutions concerning the economics of growth and business cycles, employment, national income accounting, interest and exchange rates, money and banking, the balance of trade.
 
-## Appendix
+## Remarks
 
 The course note for this course is incomplete.
