@@ -128,6 +128,30 @@ main { flex: 1 0 auto; }
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
 }
 
+/* Dropdown (nav items with `children` in _data/nav.yml). Opens on hover and on
+   keyboard focus; on touch screens, tapping the parent opens its landing page. */
+.nav__group { position: relative; }
+.nav__caret { font-size: .7em; margin-left: .3em; opacity: .7; }
+.nav__menu {
+  position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+  padding-top: .45rem;               /* hover bridge between link and menu */
+  min-width: 11rem; z-index: 60;
+  visibility: hidden; opacity: 0; transition: opacity .12s ease, visibility .12s ease;
+}
+.nav__group:hover .nav__menu,
+.nav__group:focus-within .nav__menu { visibility: visible; opacity: 1; }
+.nav__menu-list {
+  display: grid; gap: .1rem; padding: .35rem;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; box-shadow: var(--shadow);
+}
+.nav__menu-link {
+  display: block; padding: .5rem .75rem; border-radius: 8px; white-space: nowrap;
+  color: var(--muted); font-size: .95rem; font-weight: 500; text-decoration: none;
+}
+.nav__menu-link:hover { color: var(--text); background: color-mix(in srgb, var(--accent) 10%, transparent); text-decoration: none; }
+.nav__menu-link.is-active { color: var(--accent); }
+
 .theme-toggle {
   border: 1px solid var(--border); background: var(--surface);
   width: 36px; height: 36px; border-radius: 9px; cursor: pointer;
@@ -230,7 +254,43 @@ main { flex: 1 0 auto; }
 .project-page__back { margin-bottom: 1rem; }
 .project-page__back a { font-family: var(--font-mono); font-size: .85rem; color: var(--muted); }
 .project-page__meta { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1rem; }
-.project-page__links { display: flex; gap: .6rem; margin-top: 1.2rem; }
+.project-page__links { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.2rem; }
+
+/* ============================================================================
+   EXPLORE / ACADEMICS TILES (navigation cards, built from _data/nav.yml)
+   ========================================================================== */
+.tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
+.tile {
+  display: flex; flex-direction: column; gap: .55rem; padding: 1.25rem;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  color: var(--text); text-decoration: none;
+  transition: transform .14s ease, border-color .14s ease, box-shadow .14s ease;
+}
+.tile:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); box-shadow: var(--shadow); text-decoration: none; }
+.tile__top { display: flex; align-items: center; justify-content: space-between; gap: .6rem; }
+.tile__icon {
+  display: inline-grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: 10px;
+  color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+.tile__group { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.tile__title { font-size: 1.1rem; display: flex; align-items: baseline; gap: .4rem; }
+.tile__arrow { color: var(--accent); transition: transform .14s ease; }
+.tile:hover .tile__arrow { transform: translateX(3px); }
+.tile__desc { color: var(--muted); font-size: .92rem; line-height: 1.5; }
+.academics__body { margin-bottom: 2rem; }
+
+/* ============================================================================
+   COURSE NOTES
+   ========================================================================== */
+.callout {
+  max-width: var(--prosew); margin-bottom: 2.4rem; padding: .85rem 1rem;
+  border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0;
+  background: color-mix(in srgb, var(--accent) 8%, transparent); color: var(--muted);
+}
+.project-page .callout { margin-top: 2.4rem; margin-bottom: 0; }
+.notes-year + .notes-year { margin-top: 2.8rem; }
+.notes-year__title { font-family: var(--font-mono); font-size: 1.05rem; font-weight: 600; color: var(--accent); letter-spacing: .04em; margin-bottom: 1rem; }
+.course-code { font-family: var(--font-mono); font-size: .8rem; letter-spacing: .04em; color: var(--accent); }
 
 /* ============================================================================
    RÉSUMÉ

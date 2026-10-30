@@ -4,7 +4,7 @@ layout: default
 {%- comment -%}
   Landing page = your "About + contact" section. The hero copy (the lede) comes
   from the Markdown body of index.md, so you edit it as plain Markdown. Featured
-  cards pull from any _projects/ file with `featured: true`.
+  cards pull from any project / paper / publication with `featured: true`.
 {%- endcomment -%}
 {%- assign r = site.data.resume -%}
 
@@ -18,16 +18,31 @@ layout: default
     {{ content }}
   </div>
 
-  <div class="hero__actions">
-    <a class="btn" href="{{ '/resume/' | relative_url }}">Read my résumé</a>
-    <a class="btn btn--ghost" href="{{ '/projects/' | relative_url }}">See projects</a>
-    <a class="btn btn--ghost" href="{{ '/papers/' | relative_url }}">Read my papers</a>
-    <a class="btn btn--ghost" href="{{ '/publications/' | relative_url }}">See publications</a>
-    <a class="btn btn--ghost" href="{{ '/blog/' | relative_url }}">Read my blog</a>
-  </div>
-
   <div class="hero__social">
     {% include social.html %}
+  </div>
+</section>
+
+{%- comment -%}
+  "Explore" card grid, built from _data/nav.yml: every page except About gets a
+  card; items under a dropdown (e.g. Academics) appear as their own cards with
+  the group name in the corner. Add a nav entry and its card appears here.
+{%- endcomment -%}
+<section class="container section explore">
+  <div class="section__head">
+    <h2 class="section__title">Explore</h2>
+  </div>
+  <div class="tiles">
+    {%- for item in site.data.nav -%}
+      {%- if item.url == "/" -%}{%- continue -%}{%- endif -%}
+      {%- if item.children -%}
+        {%- for child in item.children -%}
+          {% include tile.html item=child group=item.title %}
+        {%- endfor -%}
+      {%- else -%}
+        {% include tile.html item=item %}
+      {%- endif -%}
+    {%- endfor -%}
   </div>
 </section>
 

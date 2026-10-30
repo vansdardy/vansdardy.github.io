@@ -1,14 +1,42 @@
-# Top navigation links. Add a line here to add a nav item (e.g. a future
-# "Writing" section). Order = display order.
+# Top navigation. Order = display order.
+#   title / url    — the link
+#   children       — optional; turns the item into a hover dropdown (its own url
+#                    still works as a landing page)
+#   icon / description — used by the card grids on the home page ("Explore")
+#                    and the Academics page. Icons: resume, projects, academics,
+#                    papers, publications, notes, blog.
 - title: About
   url: /
+
 - title: Résumé
   url: /resume/
+  icon: resume
+  description: Experience, education, skills, and awards — plus the PDF version.
+
 - title: Projects
   url: /projects/
-- title: Papers
-  url: /papers/
-- title: Publications
-  url: /publications/
+  icon: projects
+  description: Software and side projects I've built.
+
+- title: Academics
+  url: /academics/
+  icon: academics
+  description: Papers, publications, and course notes.
+  children:
+    - title: Papers
+      url: /papers/
+      icon: papers
+      description: Research papers and write-ups, with PDFs.
+    - title: Publications
+      url: /publications/
+      icon: publications
+      description: Peer-reviewed and formally published work.
+    - title: Notes
+      url: /notes/
+      icon: notes
+      description: My course notes from UBC and ETH Zürich, by school year.
+
 - title: Blog
   url: /blog/
+  icon: blog
+  description: Essays, sketches, and things I'm thinking about.

@@ -1,0 +1,14 @@
+{%- comment -%}
+  One navigation card. Usage: {% include tile.html item=<nav.yml entry> group="Academics" %}
+  `item` needs title + url; icon + description are optional. `group` adds a small
+  label in the corner (used for pages that live under a dropdown).
+{%- endcomment -%}
+{%- assign t = include.item -%}
+<a class="tile" href="{{ t.url | relative_url }}">
+  <div class="tile__top">
+    <span class="tile__icon">{% include icon.html name=t.icon %}</span>
+    {%- if include.group -%}<span class="tile__group">{{ include.group }}</span>{%- endif -%}
+  </div>
+  <h3 class="tile__title">{{ t.title }}<span class="tile__arrow" aria-hidden="true">→</span></h3>
+  {%- if t.description -%}<p class="tile__desc">{{ t.description }}</p>{%- endif -%}
+</a>

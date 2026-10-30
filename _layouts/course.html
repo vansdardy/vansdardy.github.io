@@ -1,0 +1,42 @@
+---
+layout: default
+---
+{%- comment -%}
+  One course from _course_notes/<school-year>/<course>.md.
+  Front matter: title, code, school, files (list of PDF paths). The body is the
+  course description. One file → a "Notes (PDF)" button; several → one button
+  per file, labelled with its filename.
+{%- endcomment -%}
+{%- assign parts = page.relative_path | split: "/" -%}
+{%- assign files = page.files | default: page.file -%}
+<article class="prose container project-page">
+  <p class="project-page__back"><a href="{{ '/notes/' | relative_url }}">← All notes</a></p>
+
+  <header class="page-head">
+    <p class="course-code">{{ page.code }}</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.school %}<p class="page-head__subtitle">{{ page.school }}</p>{% endif %}
+
+    <div class="project-page__meta">
+      <span class="badge">{{ parts[1] | replace: "-", "–" }}</span>
+    </div>
+
+    <div class="project-page__links">
+      {%- for f in files -%}
+        {%- if files.size > 1 -%}
+          {%- assign label = f | split: "/" | last -%}
+        {%- else -%}
+          {%- assign label = "Notes (PDF)" -%}
+        {%- endif -%}
+        {% include pdf-button.html href=f label=label %}
+      {%- endfor -%}
+    </div>
+  </header>
+
+  {{ content }}
+
+  <p class="callout">
+    Spotted a mistake in these notes? Please report it at
+    <a href="https://github.com/vansdardy/UBC-Note-Collections/issues" target="_blank" rel="noopener">github.com/vansdardy/UBC-Note-Collections/issues</a>.
+  </p>
+</article>

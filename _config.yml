@@ -31,6 +31,9 @@ collections:
   publications:
     output: true
     permalink: /publications/:name/
+  course_notes:              # _course_notes/<school-year>/<code>.md → /notes/<code>/
+    output: true
+    permalink: /notes/:name/
   blog:
     output: true
     permalink: /blog/:name/
@@ -46,6 +49,8 @@ defaults:
     values: { layout: "project" }
   - scope: { path: "", type: "publications" }
     values: { layout: "project" }
+  - scope: { path: "", type: "course_notes" }
+    values: { layout: "course" }
   - scope: { path: "", type: "blog" }
     values: { layout: "post" }
 

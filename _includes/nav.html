@@ -5,15 +5,33 @@
     </a>
 
     <div class="nav__links">
-      {%- comment -%} Links are data-driven: edit the list in _data/nav.yml {%- endcomment -%}
-      {%- assign current = page.url -%}
+      {%- comment -%} Links are data-driven: edit the list in _data/nav.yml.
+        An item with `children` becomes a hover/focus dropdown. {%- endcomment -%}
       {%- for item in site.data.nav -%}
-        {%- assign href = item.url | relative_url -%}
         {%- assign active = "" -%}
         {%- if page.url == item.url or item.url != "/" and page.url contains item.url -%}
           {%- assign active = "is-active" -%}
         {%- endif -%}
-        <a class="nav__link {{ active }}" href="{{ href }}">{{ item.title }}</a>
+        {%- for child in item.children -%}
+          {%- if page.url contains child.url -%}{%- assign active = "is-active" -%}{%- endif -%}
+        {%- endfor -%}
+
+        {%- if item.children -%}
+          <div class="nav__group">
+            <a class="nav__link {{ active }}" href="{{ item.url | relative_url }}" aria-haspopup="true">{{ item.title }}<span class="nav__caret" aria-hidden="true">▾</span></a>
+            <div class="nav__menu">
+              <div class="nav__menu-list">
+                {%- for child in item.children -%}
+                  {%- assign child_active = "" -%}
+                  {%- if page.url contains child.url -%}{%- assign child_active = "is-active" -%}{%- endif -%}
+                  <a class="nav__menu-link {{ child_active }}" href="{{ child.url | relative_url }}">{{ child.title }}</a>
+                {%- endfor -%}
+              </div>
+            </div>
+          </div>
+        {%- else -%}
+          <a class="nav__link {{ active }}" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        {%- endif -%}
       {%- endfor -%}
 
       <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle theme">

@@ -1,0 +1,56 @@
+---
+layout: default
+title: Course Notes
+description: "Course notes from UBC and ETH Zürich, grouped by school year."
+permalink: /notes/
+---
+{%- comment -%}
+  Lists _course_notes/<school-year>/<course>.md. The school year comes from the
+  folder name (e.g. "2023-24"), so grouping a course = putting its file in the
+  right folder. Years newest-first; courses sorted by code within a year.
+{%- endcomment -%}
+{%- assign courses = site.course_notes | sort: "code" -%}
+{%- assign years = "" -%}
+{%- for c in courses -%}
+  {%- assign parts = c.relative_path | split: "/" -%}
+  {%- assign years = years | append: parts[1] | append: "," -%}
+{%- endfor -%}
+{%- assign years = years | split: "," | uniq | sort | reverse -%}
+
+<section class="container section">
+  <header class="page-head">
+    <h1>Course Notes</h1>
+    <p class="page-head__subtitle">Notes I’ve written for my courses, grouped by school year. Click a course for its description and PDF.</p>
+  </header>
+
+  <p class="callout">
+    Spotted a mistake? Please report it at
+    <a href="https://github.com/vansdardy/UBC-Note-Collections/issues" target="_blank" rel="noopener">github.com/vansdardy/UBC-Note-Collections/issues</a>
+    — that repository holds all of these notes along with their source files.
+  </p>
+
+  {%- if years.size == 0 -%}
+    <p class="empty-state">No course notes yet — check back soon.</p>
+  {%- endif -%}
+
+  {%- for year in years -%}
+    <section class="notes-year">
+      <h2 class="notes-year__title">{{ year | replace: "-", "–" }}</h2>
+      <div class="cards">
+        {%- for c in courses -%}
+          {%- assign parts = c.relative_path | split: "/" -%}
+          {%- if parts[1] != year -%}{%- continue -%}{%- endif -%}
+          {%- assign files = c.files | default: c.file -%}
+          <a class="card" href="{{ c.url | relative_url }}">
+            <div class="card__top">
+              <span class="course-code">{{ c.code }}</span>
+              {%- if files.size > 1 -%}<span class="card__year">{{ files.size }} PDFs</span>{%- endif -%}
+            </div>
+            <h3 class="card__title">{{ c.title }}</h3>
+            <p class="card__summary">{{ c.school }}</p>
+          </a>
+        {%- endfor -%}
+      </div>
+    </section>
+  {%- endfor -%}
+</section>

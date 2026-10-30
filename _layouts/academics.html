@@ -1,0 +1,26 @@
+---
+layout: default
+---
+{%- comment -%}
+  Academics hub. The Markdown body of academics.md (degree photos, certificates,
+  …) renders first; below it, one card per child of the Academics entry in
+  _data/nav.yml (Papers, Publications, Notes).
+{%- endcomment -%}
+{%- assign hub = site.data.nav | where: "url", page.url | first -%}
+<section class="container section">
+  <header class="page-head">
+    <h1>{{ page.title }}</h1>
+    {% if page.subtitle %}<p class="page-head__subtitle">{{ page.subtitle }}</p>{% endif %}
+  </header>
+
+  {%- assign body = content | strip -%}
+  {%- if body != "" -%}
+    <div class="prose academics__body">{{ body }}</div>
+  {%- endif -%}
+
+  <div class="tiles">
+    {%- for child in hub.children -%}
+      {% include tile.html item=child %}
+    {%- endfor -%}
+  </div>
+</section>
