@@ -9,7 +9,7 @@ basics:
   label: "Honours Bachelor of Science in Computer Science, Bachelor of Arts in Economics"          # the line under your name
   email: "wtian02@student.ubc.ca"
   location: "Markham, Ontario, Canada"
-  pdf: "/assets/files/complete-resume-2026nov-v1.pdf"   # your LaTeX PDF; the button appears once this file exists
+  pdf: "/assets/files/complete-resume-2026nov-v2.pdf"   # your LaTeX PDF; the button appears once this file exists
   summary: >
     Eager to grasp opportunities and seek positions closely related to information technology, mathematics, natural sciences, data science, and finance. 
     Open to research opportunities about quantum computing, theoretical computer science, econometrics, game theory, and central banking/macroeconomics.
@@ -105,11 +105,15 @@ skills:
     items: ["Mandarin (Mother Tongue)", "English (Native Speaker Level)", "French (B1)", "German (A1)"]
 
 awards:
-  - title: "J Fred Muir Memorial Scholarship in Science"
+  - title: "Economics Undergraduate Scholarship (# 1341)"
+    awarder: "University of British Columbia - Vancouver School of Economics"
+    date: "Nov. 2026"
+    summary: "Scholarships have been endowed by alumni and friends of the Department of Economics for undergraduate students in the Department.  The Awards are made on the recommendation of the Department of Economics."
+  - title: "J. Fred Muir Memorial Scholarship in Science (# 4386)"
     awarder: "University of British Columbia - Faculty of Science"
     date: "Mar. 2026"
-    summary: "Awarded to students in the Faculty of Science on the recommendation of the Faculty for academic excellence."
-  - title: "Hugh M Brock Go Global Scholarship"
+    summary: "Scholarships have been endowed through a bequest in memory of J. F. Muir by Lillian Muir. The awards are offered to students in the Faculty of Science on the recommendation of the Faculty."
+  - title: "Hugh M. Brock Go Global Scholarship (# 5100)"
     awarder: "University of British Columbia - Go Global Office"
     date: "Sep. 2024"
-    summary: "Awarded to UBC students participating in international learning programs through Go Global."
+    summary: "Scholarships have been made available through an endowment established by an estate gift from Hugh M. Brock for outstanding incoming and outgoing undergraduate students participating in Go Global programs. The awards are made on the recommendation of Go Global and Enrolment Services."
